@@ -1,6 +1,4 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/methods.scss';
 
 const Methods: React.FC = () => {
   const navigate = useNavigate();

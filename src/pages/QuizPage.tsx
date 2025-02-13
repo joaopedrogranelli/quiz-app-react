@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Question } from '../types/question';
-import '../styles/quiz.scss';
+import { useEffect, useState } from 'react';
 
 const QuizPage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
