@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../style.css'
+import styles from '../styles/Home.module.scss';
 
 interface CertificationCardProps {
   name: string;
@@ -15,8 +15,9 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ name }) => {
   };
 
   return (
-    <div className="certification-card">
+    <div className={styles.certificationCard}>
       <h3>{name}</h3>
+      <p>Perguntas Cadastradas:</p>
       <button onClick={handleStart}>Praticar</button>
     </div>
   );
