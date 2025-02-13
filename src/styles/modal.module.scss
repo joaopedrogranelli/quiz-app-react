@@ -1,0 +1,184 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background-color: #fff;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    max-height: 80vh;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    margin: 20px;
+    overflow-y: auto;
+  
+    .modalFrame {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  
+      h3 {
+        margin: 10px 0;
+        color: #333;
+        font-size: 1.5rem;
+      }
+  
+      .startButtons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+  
+        button {
+          padding: 10px 15px;
+          border: none;
+          border-radius: 6px;
+          background-color: #4caf50;
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+      }
+  
+      .schedule p {
+        font-style: italic;
+        color: #555;
+      }
+  
+      .dateHighlight {
+        color: #4caf50;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+  
+      .modalButtons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        button {
+          padding: 12px;
+          border: none;
+          border-radius: 6px;
+          color: #fff;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &.start {
+            background-color: #4caf50;
+  
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+  
+          &.scheduleButton {
+            background-color: #2196f3;
+  
+            &:hover {
+              background-color: #1976d2;
+            }
+          }
+  
+          &.close {
+            background-color: #f44336;
+  
+            &:hover {
+              background-color: #d32f2f;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Responsividade */
+  @media (max-height: 600px) {
+    .modalContent {
+      max-height: 70vh;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .modalContent {
+      width: 95%;
+      padding: 15px;
+  
+      .modalFrame {
+        h3 {
+          font-size: 1.2rem;
+        }
+  
+        .startButtons {
+          button {
+            padding: 8px 10px;
+            font-size: 0.9rem;
+          }
+        }
+  
+        .dateHighlight {
+          font-size: 1.1rem;
+        }
+  
+        .modalButtons {
+          button {
+            padding: 10px;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .modalContent {
+      width: 100%;
+      border-radius: 0;
+  
+      .modalFrame {
+        h3 {
+          font-size: 1rem;
+        }
+  
+        .startButtons {
+          flex-direction: column;
+  
+          button {
+            width: 100%;
+            margin-bottom: 5px;
+          }
+        }
+  
+        .dateHighlight {
+          font-size: 1rem;
+        }
+  
+        .modalButtons {
+          flex-direction: column;
+  
+          button {
+            font-size: 0.85rem;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+  
