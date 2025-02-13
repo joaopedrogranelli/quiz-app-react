@@ -1,0 +1,161 @@
+// Variables
+$green-primary: #4caf50;
+$green-light: #87e6a9;
+$background-light: #e8f5e9;
+$text-dark: #333;
+$text-light: #fff;
+$border-color: #4caf50;
+
+.methodsContainer {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $background-light;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .methodsHeader {
+    background: linear-gradient(to right, #4facfe, #38f9d7);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: $text-light;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .backButton {
+      background: none;
+      border: none;
+      color: $text-light;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  }
+
+  .methodsMain {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+    .methodsBox {
+      background-color: #fff;
+      border: 2px solid $green-primary;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      margin: 20px;
+      width: 80%;
+      max-width: 600px;
+
+      h2 {
+        margin-bottom: 10px;
+        color: $text-dark;
+      }
+
+      h5 {
+        margin-bottom: 20px;
+        color: darken($text-dark, 20%);
+        font-style: italic;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .methodButton {
+          background-color: $green-primary;
+          color: $text-light;
+          border: none;
+          border-radius: 6px;
+          padding: 15px 25px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($green-primary, 10%);
+          }
+        }
+      }
+
+      .customMethod {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .customInput {
+          padding: 10px;
+          border: 2px solid $green-primary;
+          border-radius: 6px;
+          text-align: center;
+          font-size: 16px;
+          width: 200px;
+        }
+
+        .customButton {
+          background-color: $green-primary;
+          color: $text-light;
+          border: none;
+          border-radius: 6px;
+          padding: 12px 25px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($green-primary, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .methodsFooter {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #4facfe, #38f9d7);
+    color: $text-light;
+    font-size: 12px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .methodsMain .methodsBox {
+    width: 90%;
+  }
+
+  .methodsMain .buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .methodsMain .methodsBox h2 {
+    font-size: 18px;
+  }
+
+  .methodsMain .buttons .methodButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .methodsMain .customMethod .customInput {
+    width: 180px;
+  }
+}
