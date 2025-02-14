@@ -48,7 +48,7 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, onClose, methodDetails, sta
           <button className={styles.start} onClick={startQuiz}>
             Ir para o Simulado
           </button>
-          <button className={styles.scheduleButton}>Agendar Exame</button>
+          <button className={styles.scheduleButton}>Agendar o exame</button>
           <button className={styles.close} onClick={onClose}>
             Fechar
           </button>
