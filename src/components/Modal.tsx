@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import styles from '../styles/modal.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 interface ModalProps {
   isOpen: boolean;
@@ -15,6 +16,7 @@ interface ModalProps {
 }
 
 const CustomModal: React.FC<ModalProps> = ({ isOpen, onClose, methodDetails, startQuiz }) => {
+  const navigate = useNavigate();
   if (!isOpen) return null;
 
   return (
@@ -45,9 +47,9 @@ const CustomModal: React.FC<ModalProps> = ({ isOpen, onClose, methodDetails, sta
         <p className={styles.dateHighlight}>🏆 {methodDetails.examDate} 🏆</p>
 
         <div className={styles.modalButtons}>
-          <button className={styles.start} onClick={startQuiz}>
-            Ir para o Simulado
-          </button>
+        <button className={styles.start} onClick={() => navigate('/exam')}>
+          Ir para a Prova
+        </button>
           <button className={styles.scheduleButton}>Agendar o exame</button>
           <button className={styles.close} onClick={onClose}>
             Fechar
