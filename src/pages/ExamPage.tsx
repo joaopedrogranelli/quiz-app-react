@@ -81,7 +81,7 @@ const handleGoToQuestion = () => {
         </div>
 
         {/* Título */}
-        <h1>{certification} - Simulado</h1>
+        <h1>{certification}</h1>
 
         {/* Botão de Ver/Ocultar Resposta */}
         <div className={styles.buttons}>
@@ -94,9 +94,26 @@ const handleGoToQuestion = () => {
             </button>
         </div>
         </header>
+      {/* Checkpoints */}
+        <div className={styles.checkpoints}>
+        {Array.from({ length: 4 }).map((_, index) => (
+            <div 
+            key={index} 
+            className={`${styles.checkpoint} ${currentQuestion >= (index + 1) * (questions.length / 4) ? styles.completed : ''}`}
+            >
+            {`Checkpoint ${index + 1}`}
+            </div>
+        ))}
+        </div>
+        {/* Barra de progresso */}
+        <div className={styles.progressContainer}>
+        <div 
+            className={styles.progressBar} 
+            style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+        />
+        </div>
 
-      
-  
+
       <main className={styles.main}>
         {/* Verifica se existem perguntas, se não, mostra um aviso */}
         {questions.length > 0 ? (
